@@ -1,0 +1,25 @@
+-----------Exception Details on  05/08/2020 12:26:13-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 05/08/2020 12:26:13
+
+Error Line No : line 71
+
+Error Message: HttpException
+
+Exception Type: System.Web.HttpException
+
+Error Location : The transport failed to connect to the server.
+
+
+ Error Page Url: http://localhost:57793/rcd/RCDPension/Register.aspx
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

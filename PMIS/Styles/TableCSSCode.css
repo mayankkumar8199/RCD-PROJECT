@@ -1,0 +1,421 @@
+.CSSTableGenerator
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 0px 4px 5px #244D23;
+    border: 1px solid #244D23;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+.CSSTableGenerator table
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.CSSTableGenerator table tr th:first-child
+{
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGenerator table tr th:last-child
+{
+    border: 0px solid #244D23;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.CSSTableGenerator table tr:last-child th:first-child
+{
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+
+
+.CSSTableGenerator tr:last-child td:last-child
+{
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+.CSSTableGenerator td, th
+{
+    vertical-align: middle;
+    border: 0px solid #244D23;
+    padding: 3px;
+    font-size: 12pt;
+    font-weight: normal;
+    color: #000000;
+    vertical-align:top;
+}
+
+.CSSTableGenerator tr th
+{
+    background: -o-linear-gradient(bottom, #244D23 5%,#244D23 100%);
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #244D23), color-stop(1, #244D23) );
+    background: -moz-linear-gradient( center top, #244D23 5%, #244D23 100% );
+    border-style: solid;
+    border-color: #0000FF;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#244D23", endColorstr="#244D23");
+    background: -o-linear-gradient(top,#244D23,#244D23);
+    background-color: #244D23;
+    text-align: center;
+    border-width: 0px 0px 1px 1px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+
+
+.CSSTableGeneratorGrid
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 0px 4px 5px #888888;
+    border: 1px none #CC00FF;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGeneratorGridMed
+{
+    margin: 0px;
+    padding: 0px;
+    width: 75%;
+    box-shadow: 0px 4px 5px #888888;
+    border: 1px none #CC00FF;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGeneratorGridMed table
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.CSSTableGeneratorGrid table
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.CSSTableGeneratorGrid table tr th:first-child
+{
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGeneratorGridMed table tr th:first-child
+{
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGeneratorGrid table tr th:last-child
+{
+ 
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.CSSTableGeneratorGridMed table tr th:last-child
+{
+ 
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+}
+.CSSTableGeneratorGrid tr:last-child td:first-child
+{
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+.CSSTableGeneratorGridMed tr:last-child td:first-child
+{
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.CSSTableGeneratorGrid tr:last-child td:last-child
+{
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+.CSSTableGeneratorGridMed tr:last-child td:last-child
+{
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+
+
+
+.CSSTableGeneratorHeader
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 0px 4px 5px #888888;
+    border: 1px solid #990099;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGeneratorHeader table
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.CSSTableGeneratorHeader table tr th:first-child
+{
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+
+.CSSTableGeneratorHeader table tr th:last-child
+{
+ 
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.CSSTableGeneratorHeader tr:last-child th:first-child
+{
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.CSSTableGeneratorHeader tr:last-child th:last-child
+{
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+
+.CSSTableGeneratorHeader tr th
+{
+    background: -o-linear-gradient(bottom, #803F8F 5%, #803F8F 100%);
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #803F8F), color-stop(1,#803F8F) );
+    background: -moz-linear-gradient( center top, #803F8F 5%, #803F8F 100% );
+    border-style: solid;
+    border-color: #990099;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#803F8F", endColorstr="#803F8F");
+    background: -o-linear-gradient(top,#803F8F,#803F8F);
+    background-color: #FFB69D;
+    text-align: center;
+    border-width: 0px 0px 1px 1px;
+    font-size: 14px;
+    color: #660033;
+    font-weight: bold;
+}
+
+
+
+.CSSTableGeneratorGrid td, th
+{
+    vertical-align: middle;
+   
+    padding: 3px;
+    font-size: 10pt;
+    font-weight: normal;
+    color: #000000;
+    background-color: White;
+}
+.CSSTableGeneratorGridMed td, th
+{
+    vertical-align: middle;
+   /* border: 1px none #CC00FF; */
+    padding: 3px;
+    font-size: 10pt;
+    font-weight: normal;
+    color: #000000;
+    background-color: White;
+}
+
+.CSSTableGeneratorGrid .selectedRow td
+{
+    vertical-align: middle;
+    border: 1px solid #990099;
+    padding: 3px;
+    font-size: 12pt;
+    font-weight: normal;
+    color: #000000;
+    background-color: #CCFFCC;
+}
+.CSSTableGeneratorGrid .FooterRow td
+{
+    
+    vertical-align: middle;
+    border: 1px solid #3f7f00;
+    padding: 3px;
+    font-size: 12pt;
+    font-weight: normal;
+    color: #244D23;
+    background-color: #244D23;
+}
+.CSSTableGeneratorGrid tr th
+{
+    background: -o-linear-gradient(bottom, #244D23 5%, #244D23 100%);
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #244D23), color-stop(1, #244D23) );
+    background: -moz-linear-gradient( center top,#244D23 5%, #244D23 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#244D23", endColorstr="#244D23");
+    background: -o-linear-gradient(top,#244D23,#244D23);
+    background-color: #244D23;
+    text-align: center;
+    border-width: 1px 1px 1px 1px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.CSSTableGeneratorGridMed tr th
+{
+    background: -o-linear-gradient(bottom, #336699 5%, #336699 100%);
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #336699), color-stop(1, #336699) );
+    background: -moz-linear-gradient( center top, #336699 5%, #336699 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#336699", endColorstr="#336699");
+    background: -o-linear-gradient(top,#336699,#336699);
+    background-color: #336699;
+    text-align: left;
+    border-width: 1px 1px 1px 1px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.CSSTableGeneratorMin
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 2px 2px 5px #888888;
+    border: 1px solid #3f7f00;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+.CSSTableGeneratorMin table
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.CSSTableGeneratorMin table tr:first-child td:first-child
+{
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}
+.CSSTableGeneratorMin table tr:first-child td:last-child
+{
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+}
+.CSSTableGeneratorMin tr:last-child td:first-child
+{
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.CSSTableGeneratorIcon
+{
+    margin: 0px;
+    padding: 0px;
+   
+    box-shadow: 0px 4px 5px #888888;
+    border: 1px solid #990099;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    -moz-border-radius-topright: 14px;
+    -webkit-border-top-right-radius: 14px;
+    border-top-right-radius: 14px;
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+}

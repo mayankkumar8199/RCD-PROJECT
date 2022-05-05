@@ -1,0 +1,24 @@
+-----------Exception Details on  26/08/2020 15:42:59-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 26/08/2020 15:42:59
+
+Error Line No : ine 247
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.DBNull' to type 'System.Byte[]'.
+
+ Error Page Url: http://localhost:57793/rcd/RCDPension/ImageHandler.aspx?User_ID=2DEBT8LM
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

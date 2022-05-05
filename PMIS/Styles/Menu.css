@@ -1,0 +1,74 @@
+﻿
+
+
+
+.MenuDefaultMenuItemStyle
+{
+    border: 1px solid #004FC6;
+    background-color: #004FC6;
+    color: #004FC6;
+    padding: 2px 10px;
+}
+.MenuDefaultMenuItemStyle a:hover
+{
+    text-decoration: none;
+    color: #588718;
+}
+.MenuDefaultSelectedStyle
+{
+    background-color: #588718;
+    color: #FFFFFF;
+    padding: 2px 10px;
+}
+
+.MenuDefaultHoverStyle
+{
+    background-color: #588718;
+    color: #FFFFFF;
+    padding: 2px 10px;
+}
+
+.MenuDefaultHoverStyle:hover
+{
+    text-decoration: none;
+    color: #588718;
+}
+.MenuVerticalMenuItemStyle
+{
+    background-color: #FFFFFF;
+    border: 1px solid #588718;
+    color: #588718;
+    height: 20px;
+    padding: 2px 10px;
+}
+
+.MenuVerticalSelectedStyle
+{
+    background-color: #588718;
+    border: 1px solid #588718;
+    color: #588718;
+    height: 20px;
+    padding: 2px 10px;
+}
+
+.MenuVerticalHoverStyle
+{
+    background-color: #588718;
+    border: 1px solid #000000;
+    color: #FFFFFF;
+    height: 20px;
+    padding: 2px 10px;
+}
+
+
+a.MenuDefaultMenuItemStyle:link
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.MenuDefaultMenuItemStyle:visited
+{
+    text-decoration: none;
+    color: #ffffff;
+}

@@ -1,0 +1,123 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Web.Security;
+using System.Data.SqlClient;
+
+public partial class addroad : System.Web.UI.Page
+{
+    clsDataAccessRCDPMISNEW cls = new clsDataAccessRCDPMISNEW();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if(!Page.IsPostBack)
+        {
+            bindwings();
+            bindcircle();
+            //binddivision();
+        }
+    }
+
+    public void bindwings()
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+
+
+            dt = cls.GetDataTable(@"SELECT WingID,WingName FROM Wing;");
+            if (dt.Rows.Count > 0)
+            {
+                ddlwings.DataSource = dt;
+                ddlwings.DataTextField = "WingName";
+                ddlwings.DataValueField = "WingID";
+                ddlwings.DataBind();
+
+                ddlwings.Items.Insert(0, new ListItem("--Select --", "0"));
+                dt.Dispose();
+            }
+        }
+        catch (Exception ex)
+        {
+
+
+        }
+    
+    
+    }
+
+    public void bindcircle()
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+
+            string sql = @"select CircleName,CircleID,WingID from Circles where WingID=@WingID";
+
+            SqlParameter WingID = new SqlParameter("@WingID", Convert.ToInt32(ddlwings.SelectedValue.ToString()));
+            dt=cls.GetDataTable(sql,new SqlParameter[]{WingID});
+            if (dt.Rows.Count > 0)
+            {
+                ddlcircle.DataSource = dt;
+                ddlcircle.DataTextField = "CircleName";
+                ddlcircle.DataValueField = "CircleID";
+                ddlcircle.DataBind();
+
+                //ddlcircle.Items.Insert(0, new ListItem("--Select --", "0"));
+                dt.Dispose();
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    protected void ddlwings_SelectedIndexChanged(object sender, EventArgs e)
+    {
+         bindcircle();
+        //binddivision();
+        
+        
+    }
+    protected void ddlcircle_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //bindcircle();
+        //binddivision();
+
+
+    }
+    
+    //public void binddivision()
+    //{
+    //    try
+    //    {
+    //        DataTable dt = new DataTable();
+
+    //        string sql = @"select DivisionName,DivisionID,CircleID from Divisions where CircleID=@Circle ID";
+
+    //        SqlParameter CircleID = new SqlParameter("@CircleID", Convert.ToInt32(ddlcircle.SelectedValue.ToString()));
+    //        dt = cls.GetDataTable(sql, new SqlParameter[] { CircleID });
+    //        if (dt.Rows.Count > 0)
+    //        {
+    //            ddldivision.DataSource = "dt";
+    //            ddldivision.DataTextField = "DivisionName";
+    //            ddldivision.DataValueField = "DivisionId";
+    //            ddldivision.DataBind();
+
+    //            //ddldivision.Items.Insert(0,new ListItem("--Select --","0"));
+    //            dt.Dispose();
+
+    //        }
+    //    }
+    //    catch { }
+    
+    
+    //}
+}
+    
+   
+            

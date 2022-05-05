@@ -1,0 +1,354 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="RCDPMISNEW_SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://kit.fontawesome.com/7271788e68.js" crossorigin="anonymous"></script>
+    <link href="css/bootstrap.css" rel="Stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css" rel="Stylesheet" type="text/css" />
+    <link href="css/Menu.css" rel="Stylesheet" type="text/css" />
+    <link href="css/custom.min.css" rel="stylesheet" />
+    <link href="css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="css/material-dashboard.css" rel="stylesheet" />
+    <script type="text/javascript" src="ChartJS/exporting.src.js"></script>
+    <%--<script type="text/javascript"  src="ChartJS/highcharts-3d.js"></script>
+    <script type="text/javascript"  src="ChartJS/highcharts.src.js"></script>--%>
+
+    <script type="text/javascript"  src="ChartJS/in-all-disputed.js"></script>
+    <script type="text/javascript"  src="ChartJS/map.src.js"></script>
+    <script type="text/javascript"  src="ChartJS/obfuscated.js"></script>
+    <script  type="text/javascript" src="ChartJS/offline-exporting.src.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--<style>
+
+.btn:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+</style>--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <%-- <div class="container-fluid" style="width: 100%">--%>
+        
+    <div class="row">
+      <div class="container" style="width: 100%">
+            <div class="col-lg-12 header">
+                
+                <img src="../images/topban.jpg" width="100%" class="img-responsive" />
+            </div>
+            <div class="menucontainer mnu">
+                <table width="100%" cellspacing="0">
+                    <tr>
+                        <td align="right" style="width: 35%; font-size: 9pt;">
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                <AnonymousTemplate>
+                                    [ <a href="~/PMIS/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
+                                    ]
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    Welcome : <span class="bold">
+                                        <asp:LoginName ID="HeadLoginName" runat="server" />
+                                    </span>[
+                                    <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                                        LogoutPageUrl="~/PMIS/Login.aspx" />
+                                    ]
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" cellspacing="0">
+                    <tr>
+                        <td style="background: #12477f;">
+                            <div class="clear hideSkiplink" >
+                                <table id="Table1" runat="server" cellspacing="0" class="TopMenuSP">
+                                    <tr >
+                                        <td class="LeftCorner" style="/*padding-top:4px;*/">
+                                            <asp:LoginView ID="LoginView1" runat="server">
+                                                <RoleGroups>
+                                                    <asp:RoleGroup Roles="ADM">
+                                                        <ContentTemplate>
+                                                            <asp:Menu ID="MenuMaster" CssClass="menu " EnableViewState="false" RenderingMode="Table"
+                                                                Orientation="Horizontal" runat="server" StaticEnableDefaultPopOutImage="false"
+                                                                SkipLinkText="">
+                                                                <StaticMenuItemStyle CssClass="MenuDefaultMenuItemStyle" ItemSpacing="1px" />
+                                                                <DynamicMenuItemStyle CssClass="MenuDefaultMenuItemStyle" ItemSpacing="1px" />
+                                                                <StaticSelectedStyle CssClass="MenuDefaultSelectedStyle" />
+                                                                <DynamicSelectedStyle CssClass="MenuDefaultSelectedStyle" />
+                                                                <StaticHoverStyle CssClass="MenuDefaultHoverStyle" />
+                                                                <DynamicHoverStyle CssClass="MenuDefaultHoverStyle" />
+                                                                <Items >
+                                                                   <%-- <asp:MenuItem  NavigateUrl="~/RCDPMISNEW/ADM/Default.aspx" Text="Home" > </asp:MenuItem>--%>
+                                                                     <asp:MenuItem   NavigateUrl="~/PMIS/ADM/Dashboard.aspx" Text="Home" > </asp:MenuItem>
+                                                                    
+                                                                    <asp:MenuItem Text="Report">
+                                                                        <%-- <asp:MenuItem NavigateUrl="~/PMIS/Common/ContractorProjectDtl.aspx" Text="Contractor Details  " />
+                                                                          <asp:MenuItem NavigateUrl="~/PMIS/Common/ViewUploadQualityControlRpt.aspx" Text="View QC Report" />
+                                                                           <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadMasterReport.aspx" Text="Road Master Report" />
+                                                                          <asp:MenuItem NavigateUrl="~/PMIS/ADM/PartiallyAndFullConvertedRoadRtp.aspx" Text="Partially/Full Converted Road Master Report" />
+                                                                            <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadMasterTransactionRtp.aspx" Text="Road Master Transaction" />
+                                                                              <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadMasterXLSUploadRtp.aspx" Text="Road Master XLS Upload Report" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/ProgressReportOngoingRoadSchemesRtp.aspx" Text="Project Progress Report" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/ProjectEntryProgressRtp.aspx" Text=" Delay Project Report" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/ProjectDetailReport.aspx" Text=" Project Detail Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/PMIS/Common/rptMonthlyExpenditure.aspx" Text="Month Wise Expenditure Report" />--%>
+
+                                                                          <asp:MenuItem NavigateUrl="~/PMIS/Common/ProgressRptOngoing.aspx" Text="Ongoing Project Progress Report" />
+                                                                         <%--<asp:MenuItem NavigateUrl="~/PMIS/ADM/ProjectProgressReport.aspx" Text=" Project Progress Report" />--%>
+                                                                       <%-- <asp:MenuItem NavigateUrl="~/RCDPMISNEW/Common/ProjectEntryProgressRtp.aspx" Text="Project Entry Progress Report" />--%>
+                                                                       
+                                                                       
+                                                                       <%-- <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/rptMonthlyExpenditure.aspx" Text="Month Wise Expenditure Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/WorkProgressReport.aspx" Text="Physical Progress " />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ContractorProjectDtl.aspx" Text="Contractor Details  " />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ViewUploadInspectionRpt.aspx" Text="View Inspection Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ViewUploadQualityControlRpt.aspx" Text="View QC Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ViewUploadLabPhoto.aspx" Text="View Lab's Photo" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Inspection/SidAdminReport.aspx" Text="View SID August 2019 Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/BRPNNL/ViewBrpnnlQCReport.aspx" Text="View BRPNNL QC Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/DIR/TTRIlabViewuploadData.aspx" Text="View Lab Work Details" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Inspection/ContinuousSID_ReportAdmin.aspx" Text="Continuous SID" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/ADM/SidInspectionEntryDecember_rpt.aspx" Text="View SID Dec. 2019 Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/View_circle_squard_report.aspx" Text="View Circle Flying Squad Report" />--%>
+                                                                    </asp:MenuItem>
+
+
+
+                                                                   <%-- <asp:MenuItem Text="Special Inspection">
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/InspUploadrpt.aspx" Text="View Special Inspection report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/QualityTestRpt.aspx" Text="Quality test report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/Lengthspecialinspection.aspx" Text="Road Length report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/AbstractBridgeInspection.aspx" Text="Bridge Inspection report" />
+                                                                    </asp:MenuItem>
+                                                                    <asp:MenuItem Text="SID Compliance">
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/DIV/UploadDivInspectionFormate.aspx" Text="Upload SID Inspection" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/InspUploadDIVrpt.aspx" Text="View SID report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/QualityTestDIVRpt.aspx" Text="SID Quality test report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/LengthspecialinspectionDiv.aspx" Text="SID Road Length report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/AbstractBridgeInspectionDIV.aspx" Text="SID Bridge Inspection report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/AbstractInspectionmobrpt.aspx" Text="test report" />
+                                                                    </asp:MenuItem>--%>
+                                                                    <%-- <asp:MenuItem Text="Grievance">
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/GrievanceView.aspx" Text="Grievance View" />
+                                                                    </asp:MenuItem>--%>
+                                                                    <asp:MenuItem Text="Master">
+                                                                      <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadEntry.aspx" Text="Road Entry" />
+                                                                      </asp:MenuItem>
+                                                                       <asp:MenuItem Text="Settings">
+                                                                      <asp:MenuItem NavigateUrl="~/PMIS/Common/ChangePassword.aspx" Text="Change Password" />
+                                                                      </asp:MenuItem>
+                                                                </Items>
+                                                            </asp:Menu>
+                                                        </ContentTemplate>
+                                                    </asp:RoleGroup>
+                                                        <asp:RoleGroup Roles="DIVADM">
+                                                        <ContentTemplate>
+                                                            <asp:Menu ID="MenuMaster" CssClass="menu" EnableViewState="false" RenderingMode="Table"
+                                                                Orientation="Horizontal" runat="server" StaticEnableDefaultPopOutImage="false"
+                                                                SkipLinkText="">
+                                                                <StaticMenuItemStyle CssClass="MenuDefaultMenuItemStyle" ItemSpacing="1px" />
+                                                                <DynamicMenuItemStyle CssClass="MenuDefaultMenuItemStyle" ItemSpacing="1px" />
+                                                                <StaticSelectedStyle CssClass="MenuDefaultSelectedStyle" />
+                                                                <DynamicSelectedStyle CssClass="MenuDefaultSelectedStyle" />
+                                                                <StaticHoverStyle CssClass="MenuDefaultHoverStyle" />
+                                                                <DynamicHoverStyle CssClass="MenuDefaultHoverStyle" />
+                                                                <Items>
+                                                                    <%--<asp:MenuItem  NavigateUrl="~/RCDPMISNEW/ADM/Default.aspx" Text="Home" > </asp:MenuItem>--%>
+                                                                    <asp:MenuItem  NavigateUrl="~/PMIS/ADM/Dashboard.aspx" Text="Home" > </asp:MenuItem>
+                                                                    <asp:MenuItem Text="Master">
+                                                                       
+                                                                        <asp:MenuItem NavigateUrl="~/PMIS/Common/ProjectEntryDetails.aspx" Text=" View Project Details" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/Contractor.aspx" Text="Contractor Entry" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/AddProjectEntry.aspx" Text="Add Project" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadMasterData.aspx" Text="Road Entry" />
+                                                                          <%-- <asp:MenuItem NavigateUrl="~/RCDPMISNEW/Common/ProjectEntry.aspx" Text="Project Entry" />--%>
+                                                                      <%--   <asp:MenuItem NavigateUrl="~/PMIS/DIV/MonthlyBillEntry.aspx" Text="Bill Entry" />--%>
+                                                                        <%-- <asp:MenuItem NavigateUrl="~/RCDPMISNEW/Common/ProjectEntry.aspx" Text="Project Entry" />--%>
+                                                                   <%-- <asp:MenuItem NavigateUrl="~/RCDPMISNEW/Common/ProjectEntry.aspx" Text="Project Entry" />
+                                                                         <asp:MenuItem NavigateUrl="~/RCDPMISNEW/Common/Contractor.aspx" Text="Add Contractor" />
+                                                                         <asp:MenuItem NavigateUrl="~/RCDPMISNEW/ADM/RoadEntry.aspx" Text="Road Entry" />--%>
+                                                                    </asp:MenuItem>
+                                                                    
+                                                                    <asp:MenuItem Text="Report">
+                                                                        <%-- <asp:MenuItem NavigateUrl="~/PMIS/Common/ContractorProjectDtl.aspx" Text="Contractor Details  " />--%>
+                                                                          <%--<asp:MenuItem NavigateUrl="~/PMIS/Common/ViewUploadQualityControlRpt.aspx" Text="View QC Report" />--%>
+
+                                                                            <%--<asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadMasterReport.aspx" Text="Road Statics Report" />--%>
+                                                                             <asp:MenuItem NavigateUrl="~/PMIS/Common/ProgressRptOngoing.aspx" Text="Ongoing Project Progress Report" />
+                                                                               <asp:MenuItem NavigateUrl="~/PMIS/Common/Contractor.aspx" Text="Contractor" />
+                                                                    </asp:MenuItem>
+                                                                 
+                                                                  
+                                                                   
+                                                                    <%-- <asp:MenuItem NavigateUrl="~/PMIS/Common/ChangePassword.aspx" Text="Change Password" />--%>
+                                                                </Items>
+                                                            </asp:Menu>
+                                                        </ContentTemplate>
+                                                    </asp:RoleGroup>
+
+
+
+
+
+                                                      <asp:RoleGroup Roles="SUPERADMIN">
+                                                        <ContentTemplate>
+                                                            <asp:Menu ID="MenuMaster" CssClass="menu " EnableViewState="false" RenderingMode="Table"
+                                                                Orientation="Horizontal" runat="server" StaticEnableDefaultPopOutImage="false"
+                                                                SkipLinkText="">
+                                                                <StaticMenuItemStyle CssClass="MenuDefaultMenuItemStyle" ItemSpacing="1px" />
+                                                                <DynamicMenuItemStyle CssClass="MenuDefaultMenuItemStyle" ItemSpacing="1px" />
+                                                                <StaticSelectedStyle CssClass="MenuDefaultSelectedStyle" />
+                                                                <DynamicSelectedStyle CssClass="MenuDefaultSelectedStyle" />
+                                                                <StaticHoverStyle CssClass="MenuDefaultHoverStyle" />
+                                                                <DynamicHoverStyle CssClass="MenuDefaultHoverStyle" />
+                                                                <Items >
+                                                                   <%-- <asp:MenuItem  NavigateUrl="~/RCDPMISNEW/ADM/Default.aspx" Text="Home" > </asp:MenuItem>--%>
+                                                                     <asp:MenuItem   NavigateUrl="~/PMIS/ADM/Dashboard.aspx" Text="Home" > </asp:MenuItem>
+                                                                    <asp:MenuItem Text="Master">
+                                                                       <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadMasterData.aspx" Text="Road Master" />
+                                                                    <asp:MenuItem NavigateUrl="~/PMIS/Common/ProjectEntry.aspx" Text="Project Entry" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/Contractor.aspx" Text="Add Contractor" />
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/ADM/RoadEntry.aspx" Text="Road Entry" />
+                                                                    </asp:MenuItem>
+                                                                    <asp:MenuItem Text="Project">
+                                                                        <asp:MenuItem NavigateUrl="~/PMIS/ADM/AllotmentEntry.aspx" Text="Fund Allotment" />
+                                                                    </asp:MenuItem>
+                                                                    <asp:MenuItem Text="Report">
+                                                                         <asp:MenuItem NavigateUrl="~/PMIS/Common/ContractorProjectDtl.aspx" Text="Contractor Details  " />
+                                                                          <asp:MenuItem NavigateUrl="~/PMIS/Common/ViewUploadQualityControlRpt.aspx" Text="View QC Report" />
+                                                                       <%-- <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/RptToViewProjDtl.aspx" Text="Report To View Project Details" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/RptToViewUsrDtl.aspx" Text="Report To View User Details" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/rptMonthlyExpenditure.aspx" Text="Month Wise Expenditure Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/WorkProgressReport.aspx" Text="Physical Progress " />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ContractorProjectDtl.aspx" Text="Contractor Details  " />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ViewUploadInspectionRpt.aspx" Text="View Inspection Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ViewUploadQualityControlRpt.aspx" Text="View QC Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/ViewUploadLabPhoto.aspx" Text="View Lab's Photo" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Inspection/SidAdminReport.aspx" Text="View SID August 2019 Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/BRPNNL/ViewBrpnnlQCReport.aspx" Text="View BRPNNL QC Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/DIR/TTRIlabViewuploadData.aspx" Text="View Lab Work Details" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Inspection/ContinuousSID_ReportAdmin.aspx" Text="Continuous SID" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/ADM/SidInspectionEntryDecember_rpt.aspx" Text="View SID Dec. 2019 Report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/View_circle_squard_report.aspx" Text="View Circle Flying Squad Report" />--%>
+                                                                    </asp:MenuItem>
+                                                                   <%-- <asp:MenuItem Text="Special Inspection">
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/InspUploadrpt.aspx" Text="View Special Inspection report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/QualityTestRpt.aspx" Text="Quality test report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/Lengthspecialinspection.aspx" Text="Road Length report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/AbstractBridgeInspection.aspx" Text="Bridge Inspection report" />
+                                                                    </asp:MenuItem>
+                                                                    <asp:MenuItem Text="SID Compliance">
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/DIV/UploadDivInspectionFormate.aspx" Text="Upload SID Inspection" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/InspUploadDIVrpt.aspx" Text="View SID report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/QualityTestDIVRpt.aspx" Text="SID Quality test report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/LengthspecialinspectionDiv.aspx" Text="SID Road Length report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/AbstractBridgeInspectionDIV.aspx" Text="SID Bridge Inspection report" />
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/AbstractInspectionmobrpt.aspx" Text="test report" />
+                                                                    </asp:MenuItem>--%>
+                                                                    <%-- <asp:MenuItem Text="Grievance">
+                                                                        <asp:MenuItem NavigateUrl="~/RCDPMIS/Common/GrievanceView.aspx" Text="Grievance View" />
+                                                                    </asp:MenuItem>--%>
+                                                                   
+                                                                     <asp:MenuItem NavigateUrl="~/PMIS/Common/ChangePassword.aspx" Text="Change Password" />
+                                                                </Items>
+                                                            </asp:Menu>
+                                                        </ContentTemplate>
+                                                    </asp:RoleGroup>
+
+
+
+                                                </RoleGroups>
+                                            </asp:LoginView>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+           
+                        <div class="row">
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+            
+        </div>
+    </div>
+    <div><br />
+       <%-- Footer Start--%>
+        <%--<div class="container-fluid" style="background-color:#12477f;">
+         <div class="row" style=" min-height: 65px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 1em;">
+             <div class="col-md-6 col-xs-12 col-sm-12">
+                 Copyright © 2021 All Rights| Road Construction Department.
+             </div>
+              <div class="col-md-6 col-xs-12 col-sm-12">
+                  Developed By:NIC-BSU
+             </div>
+             
+         </div>
+     </div>--%>
+
+
+         <div class="clearfix"></div>   <br />
+     <div class="container-fluid" style="background-color:#12477f;">
+         <div class="row" style=" min-height: 55px;
+    color: white;
+    
+    font-size: 16px;
+    padding-top: 1em;">
+             <div class="col-md-9 " style="float:left;padding-top:5px;">
+                  Copyright © 2021 All Rights Reserved | Road Construction Department.
+             </div>
+              
+              <div class="col-sm-3 " style="text-align:right;padding-top:5px;">
+                  Developed By:NIC-BSU
+             </div>
+             
+         </div>
+     </div>
+
+
+
+
+
+       <%-- <footer>
+             <div class="container-fluid" >
+            <div class="row">
+             
+                <div class="col-lg-12 footer">
+                <p>Copyright © 2021 All Rights Reserved Software Solutions Provided by NIC-BSU</p>
+                    </div>
+                </div>
+            </div>
+        </footer>--%>
+    </div>
+    </form>
+</body>
+</html>

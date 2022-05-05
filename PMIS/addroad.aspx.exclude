@@ -1,0 +1,324 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addroad.aspx.cs" Inherits="addroad" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Add Road</title>
+    <style type="text/css">
+        .style1
+        {
+            margin:10px;
+            margin-right:10px;
+            height:800px;
+            width:100%;
+            border:2px solid black;
+        }
+        .style2
+        {
+            margin:0px;
+            height:65px;
+            width:100%;
+            background-color:Blue;
+            display:inline-block;
+            color:White;
+            font-size:55px;
+            font-weight:700;
+            text-align:center;
+            padding-top:7px;     
+        }
+         .style3
+        {
+           display:inline-block;
+           margin-top:15px;
+           margin-left:25px;
+           font-weight: 500;
+           font-size:21px;  
+        }
+         .style4
+        {
+             margin-top:15px;
+            height:40px;
+            width:100%;
+            background-color:Blue;
+            display:inline-block;
+            color:White;
+            font-size:25px;
+            font-weight:600;
+            text-align:center;
+            padding-top:8px;  
+        }
+        .style5
+        {
+            margin-top:30px;
+            margin-left:500px;   
+        }
+        #wings
+        {
+            width:235px;
+            padding-left:10px;
+            margin-left:121px;
+            height:25px;
+        }
+         #circle
+        {
+            width:230px;
+            padding-left:10px;
+            margin-left:70px;
+            height:25px;
+        }
+         #division
+        {
+            width:230px;
+            padding-left:10px;
+            margin-left:62px;
+            height:25px;
+        }
+        #roadname
+        {
+            width:223px;
+            padding-left:10px;
+            margin-left:75px;  
+            height:20px; 
+        }
+        #roadtype
+        {
+            width:230px;
+            padding-left:10px;
+            margin-left:25px;   
+            height:25px;
+        }
+         #subroad
+        {
+            width:223px;
+            padding-left:10px;
+            margin-left:12px;   
+            height:25px;
+        }
+        #total
+        {
+            width:223px;
+            padding-left:10px;
+            margin-left:2px;    
+            height:20px;   
+        }
+        #goods
+        {
+            margin-left:80px;
+            height:20px; 
+        }
+        #average,#fair
+        {
+             height:20px; 
+        }
+                #bad
+        {
+            margin-left:0px;
+            width:143px;
+             height:20px; 
+        }
+        #single
+        {
+            margin-left:80px;
+            width:160px;
+             height:20px; 
+        }
+        #intermediate
+        {
+            margin-left:60px;
+            width:160px;
+             height:20px; 
+        }
+        #lane
+        {
+            margin-left:130px;
+            width:160px;
+             height:20px; 
+        }
+        #more
+        {
+            margin-left:129px;
+            width:160px;
+             height:20px; 
+        }
+        #reason
+        {
+             width:530px;
+            padding-left:10px;
+            margin-left:221px;
+            height:25px;
+        }
+           #discription
+        {
+             width:530px;
+            margin-left:121px;
+             height:20px; 
+        }
+        #button
+        {
+            width:100px;
+            height:40px;
+            color:White;
+            background-color: #00FF00;
+            cursor:pointer;
+        }
+        #reset
+        {
+            margin-left:25px;
+            width:100px;
+            height:40px;
+            color:White;
+            background-color: #FF3300;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!--Div for main box-->
+<div class="style1">
+    <form id="form1" runat="server">
+
+    <div class="style2">
+       Road Statistics
+    </div>
+
+    <div>
+    <div class="style3">
+        <asp:Label ID="Label1" runat="server" Text="Wings:"></asp:Label>
+        <asp:DropDownList ID="ddlwings" runat="server" OnSelectedIndexChanged="ddlwings_SelectedIndexChanged">
+        </asp:DropDownList>
+    </div>
+
+        <div class="style3">
+        <asp:Label ID="Label2" runat="server" Text="Circle:"></asp:Label>
+        <asp:DropDownList ID="ddlcircle" runat="server" Width="100px" OnSelectedIndexChanged="ddlcircle_SelectedIndexChanged">
+        </asp:DropDownList>
+    </div>
+
+            <div class="style3">
+        <asp:Label ID="Label3" runat="server" Text="Division:"></asp:Label>
+        <asp:DropDownList ID="ddldivision" runat="server">
+            <asp:ListItem>--Select--</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    </div>
+
+    <div>
+    <div class="style3">
+              <asp:Label ID="Label4" runat="server" Text="Road Name:"></asp:Label>
+        <asp:TextBox ID="roadname" runat="server"></asp:TextBox>      
+    </div>
+
+        <div class="style3">
+              <asp:Label ID="Label5" runat="server" Text="Road Type:"></asp:Label>
+        <asp:DropDownList ID="roadtype" runat="server">
+            <asp:ListItem>--Select--</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+
+            <div class="style3">
+              <asp:Label ID="Label6" runat="server" Text="Sub Road Type:"></asp:Label>
+        <asp:DropDownList ID="subroad" runat="server">
+            <asp:ListItem>--Select--</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    </div>
+
+    <div>
+    <div class="style3">
+          <asp:Label ID="Label7" runat="server" Text="Total Length(in Km):"></asp:Label>
+     <asp:TextBox ID="total" runat="server"></asp:TextBox> 
+    </div>
+    </div>
+
+    <div class="style4">
+    Condition Of the Road (in Km)
+    </div>
+
+    <div>
+        <div class="style3">
+          <asp:Label ID="Label8" runat="server" Text="GOODS(Pots less than 2% of the total length):"></asp:Label>
+     <asp:TextBox ID="goods" runat="server"></asp:TextBox> 
+    </div>
+
+        <div class="style3">
+          <asp:Label ID="Label9" runat="server" Text="FAIR(Pots less than 5% of the  total length):"></asp:Label>
+     <asp:TextBox ID="fair" runat="server"></asp:TextBox> 
+    </div>
+    </div>
+
+        <div>
+        <div class="style3">
+          <asp:Label ID="Label10" runat="server" Text="AVERAGE(Pots between 5% to 15% of the total length:"></asp:Label>
+     <asp:TextBox ID="average" runat="server"></asp:TextBox> 
+    </div>
+
+        <div class="style3">
+          <asp:Label ID="Label11" runat="server" Text="BAD(Pots more than15% of the total length):"></asp:Label>
+     <asp:TextBox ID="bad" runat="server"></asp:TextBox> 
+    </div>
+    </div>
+
+    <div class="style4">
+    Lane Width(m)
+    </div>
+
+      <div>
+        <div class="style3">
+          <asp:Label ID="Label12" runat="server" Text="Single Lane 3.7m Width Length(Km):"></asp:Label>
+     <asp:TextBox ID="single" runat="server"></asp:TextBox> 
+    </div>
+
+        <div class="style3">
+          <asp:Label ID="Label13" runat="server" Text="Intermediate Lane 5.50m Width length(Km):"></asp:Label>
+     <asp:TextBox ID="intermediate" runat="server"></asp:TextBox> 
+    </div>
+    </div>
+
+        <div>
+        <div class="style3">
+          <asp:Label ID="Label14" runat="server" Text="2 lane 7.00m width length(Km):"></asp:Label>
+     <asp:TextBox ID="lane" runat="server"></asp:TextBox> 
+    </div>
+
+        <div class="style3">
+          <asp:Label ID="Label15" runat="server" Text="More than 7.00m width length(Km):"></asp:Label>
+     <asp:TextBox ID="more" runat="server"></asp:TextBox> 
+    </div>
+    </div>
+
+    <div class="style4">
+    Reason For Bad & Fair Condition Of Road 
+    </div>
+
+    <div>
+    <div class="style3">
+                <asp:Label ID="Label16" runat="server" Text="Reasons:"></asp:Label>
+        <asp:DropDownList ID="reason" runat="server">
+            <asp:ListItem>--Select--</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    </div>
+
+        <div class="style4">
+    Issue Of attention with HQ/Chief Office
+    </div>
+
+    <div>
+            <div class="style3">
+          <asp:Label ID="Label17" runat="server" Text="Discription Of Issue:"></asp:Label>
+     <asp:TextBox ID="discription" runat="server"></asp:TextBox> 
+    </div>
+    </div>
+
+    <div class="style5">
+        <input id="button" type="button" value="Save" 
+             />
+        <input id="reset" type="reset" value="Reset" 
+             />
+    </div>
+    </form>
+</div>
+</body>
+</html>
